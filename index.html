@@ -23,6 +23,18 @@
         
         header {
             margin-bottom: 60px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex: 0 0 120px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         
         h1 {
@@ -102,19 +114,32 @@
             h1 {
                 font-size: 2em;
             }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .profile {
+                width: 96px;
+                height: 96px;
+                flex: 0 0 96px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Ross Yeager</h1>
-        <div class="subtitle">Software Engineer • Product Leader • Builder</div>
-        <div class="bio">
-            VP of Software, Device Platform at Skydio. UC Berkeley M.Eng. (EECS), University of the Pacific B.S. (EE, Valedictorian). 
-            I build software for cutting-edge hardware products, lead engineering teams, and work on side projects that solve real problems.
-        </div>
-        <div class="bio">
-            Interests: embedded systems, automation, fitness tech, passive income projects.
+        <img src="assets/profile-pic.png" alt="Ross Yeager" class="profile">
+        <div>
+            <h1>Ross Yeager</h1>
+            <div class="subtitle">Software Engineer • Product Leader • Builder</div>
+            <div class="bio">
+                VP of Software, Device Platform at Skydio. UC Berkeley M.Eng. (EECS), University of the Pacific B.S. (EE, Valedictorian). 
+                I build software for cutting-edge hardware products, lead engineering teams, and work on side projects that solve real problems.
+            </div>
+            <div class="bio">
+                Interests: embedded systems, automation, fitness tech, passive income projects.
+            </div>
         </div>
     </header>
 
