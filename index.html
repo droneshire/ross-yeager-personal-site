@@ -210,6 +210,35 @@
             margin-bottom: 8px;
         }
 
+        .photo-grid-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin-top: 60px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            max-width: 640px;
+            margin: 30px auto 0;
+        }
+
+        .photo-grid img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 8px;
+        }
+
+        .photo-grid img:nth-child(1) { grid-column: 1 / 3; }
+        .photo-grid img:nth-child(2) { grid-column: 3 / 5; }
+        .photo-grid img:nth-child(3) { grid-column: 5 / 7; }
+        .photo-grid img:nth-child(4) { grid-column: 2 / 4; }
+        .photo-grid img:nth-child(5) { grid-column: 4 / 6; }
+
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -410,6 +439,15 @@
             <li><a href="https://stubhub-476223-d0998.web.app" target="_blank" rel="noopener noreferrer">StubHub Dashboard</a></li>
             <li><a href="https://too-good-to-go-data-collect.web.app" target="_blank" rel="noopener noreferrer">Too Good To Go Collector</a></li>
         </ul>
+
+        <hr class="photo-grid-divider">
+        <div class="photo-grid">
+            <img src="assets/gallery/gallery-1.jpg" alt="">
+            <img src="assets/gallery/gallery-2.jpg" alt="">
+            <img src="assets/gallery/gallery-3.jpg" alt="">
+            <img src="assets/gallery/gallery-4.jpg" alt="">
+            <img src="assets/gallery/gallery-5.jpg" alt="">
+        </div>
     </main>
 
     <footer>
