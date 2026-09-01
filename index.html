@@ -4,294 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ross Yeager </title>
-    <style>
-        :root{
-            --bg: #0b0d10;
-            --panel: #0f1316;
-            --text: #e6eef8;
-            --muted: #9aa6b2;
-            --accent: #4da3ff;
-            --card: #081018;
-            --border: #172027;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background: var(--bg);
-        }
-
-        header {
-            margin-bottom: 60px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .profile {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            flex: 0 0 120px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-            border: 2px solid rgba(255,255,255,0.04);
-        }
-
-        h1 {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--text);
-        }
-
-        .subtitle {
-            font-size: 1.1em;
-            color: var(--muted);
-            margin-bottom: 12px;
-        }
-
-        .bio {
-            font-size: 1em;
-            line-height: 1.7;
-            color: var(--muted);
-            margin-bottom: 12px;
-        }
-
-        .top-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-bottom: 16px;
-        }
-
-        .upwork-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 12px;
-            margin-top: 10px;
-            max-width: 640px;
-        }
-
-        .upwork-stat {
-            padding: 14px 16px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-        }
-
-        .upwork-stat strong {
-            display: block;
-            font-size: 1.4em;
-            color: var(--text);
-            margin-bottom: 2px;
-        }
-
-        .upwork-stat span {
-            color: var(--muted);
-            font-size: 0.95em;
-        }
-
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 10px;
-            color: var(--text);
-        }
-
-        .project {
-            margin-bottom: 35px;
-            padding: 20px;
-            background: var(--card);
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.5);
-        }
-
-        .project h3 {
-            font-size: 1.4em;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-
-        .project p {
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-
-        .project-links {
-            font-size: 0.9em;
-        }
-
-        .project-links a {
-            margin-right: 15px;
-        }
-
-        .podcast-preview {
-            display: block;
-            margin-bottom: 18px;
-            padding: 16px;
-            background: var(--card);
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.5);
-        }
-
-        .podcast-preview img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .podcast-preview-thumbnail {
-            width: 100%;
-            max-width: 480px;
-            aspect-ratio: 16 / 9;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 12px;
-            background: #0d141b;
-        }
-
-        .podcast-preview p {
-            color: var(--muted);
-        }
-
-        .podcast-preview-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .podcast-preview-links a {
-            display: inline-flex;
-            width: 30px;
-            height: 30px;
-            transition: transform 0.15s ease;
-        }
-
-        .podcast-preview-links a:hover {
-            transform: scale(1.1);
-        }
-
-        .podcast-preview-links svg {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .shipped-products-list,
-        .hosted-apps-list {
-            padding-left: 28px;
-        }
-
-        .hosted-apps-list li {
-            margin-bottom: 8px;
-        }
-
-        .recommend-intro {
-            color: var(--muted);
-            margin-bottom: 18px;
-            max-width: 640px;
-        }
-
-        .recommend-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .recommend-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-
-        .recommend-item svg {
-            width: 20px;
-            height: 20px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .recommend-item-text p {
-            color: var(--muted);
-            font-size: 0.9em;
-            margin-top: 2px;
-        }
-
-        .photo-grid-divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin-top: 60px;
-        }
-
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            max-width: 640px;
-            margin: 30px auto 0;
-        }
-
-        .photo-grid img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            object-position: top center;
-            border-radius: 8px;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: #7b868e;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 15px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-            .profile {
-                width: 96px;
-                height: 96px;
-                flex: 0 0 96px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
     <header>
@@ -339,12 +52,12 @@
         </div>
 
         <h2>Featured Podcast</h2>
-        <div class="podcast-preview">
-            <div class="podcast-preview-thumbnail">
+        <div class="resource-card">
+            <div class="resource-card-thumbnail">
                 <img src="https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/c4/c6/18/c4c61861-769a-1fa5-d363-5a123a4b9970/mza_9633764894382993235.jpeg/600x600bb.webp" alt="Preview thumbnail for Why Great Engineers Still Need to Stay in the Trenches">
             </div>
             <p><strong>Why Great Engineers Still Need to Stay in the Trenches</strong> - RTRS Real Talk Podcast episode on why great engineers should keep doing hands-on work even as they grow into leadership roles.</p>
-            <div class="podcast-preview-links">
+            <div class="resource-card-links">
                 <a href="https://open.spotify.com/episode/6up5n92iahJt5bbZxzY5BS?si=sEJS74YbQcWT3p2r0XgYyg&utm_source=copy-link" target="_blank" aria-label="Listen on Spotify" title="Listen on Spotify">
                     <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#1DB954" d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-8.3 5.1-12.9 11.3-14.2 81.5-18.1 165.1-16.5 235.6 25.5 5.2 3.2 8.3 6.1 8.3 13.7s-6 16.3-10.1 16.3zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.5 0 126.9 16 175.7 45.1 8.3 4.8 11.6 11 11.6 19.7-.1 10.8-8.5 19.9-18.4 19.9zm31-76.2c-5.6 0-9.1-1.6-14.3-4.5-59.8-35.5-172.6-49.1-249.9-27.8-4.5 1.3-9.9 3.6-15.5 3.6-13.3 0-23.8-10.6-23.8-24 0-13.6 8.3-21.3 17.2-23.9 32.8-9.7 69.5-14.3 109.4-14.3 68 0 139.1 14.2 190.9 45.1 7.6 4.5 12.6 10.8 12.6 22.1-.1 13.6-11 23.7-24.6 23.7z"/>
@@ -360,26 +73,26 @@
                 </a>
             </div>
         </div>
-        <a class="podcast-preview" href="https://youtube.com/watch?v=orhyys3T3AE&source_ve_path=MjM4NTE&embeds_referring_euri=https%3A%2F%2Fmemfault.com%2F&embeds_referring_origin=https%3A%2F%2Fmemfault.com" target="_blank">
-            <div class="podcast-preview-thumbnail">
+        <a class="resource-card" href="https://youtube.com/watch?v=orhyys3T3AE&source_ve_path=MjM4NTE&embeds_referring_euri=https%3A%2F%2Fmemfault.com%2F&embeds_referring_origin=https%3A%2F%2Fmemfault.com" target="_blank">
+            <div class="resource-card-thumbnail">
                 <img src="https://img.youtube.com/vi/orhyys3T3AE/hqdefault.jpg" alt="Preview thumbnail for Coredump #020: Hidden Architecture of Autonomy at Skydio">
             </div>
             <p><strong>Coredump #020: Hidden Architecture of Autonomy at Skydio</strong> - A deep dive into the technology behind Skydio.</p>
         </a>
-        <a class="podcast-preview" href="https://youtu.be/GuYb0ekLBcU?si=IMQAH9v-qdLJNeri" target="_blank">
-            <div class="podcast-preview-thumbnail">
+        <a class="resource-card" href="https://youtu.be/GuYb0ekLBcU?si=IMQAH9v-qdLJNeri" target="_blank">
+            <div class="resource-card-thumbnail">
                 <img src="https://img.youtube.com/vi/GuYb0ekLBcU/hqdefault.jpg" alt="Preview thumbnail for Ross Yeager: How To Build Your Real Estate Team Remotely">
             </div>
             <p><strong>Ross Yeager: How To Build Your Real Estate Team Remotely</strong> - A guide to building remote teams in real estate.</p>
         </a>
-        <a class="podcast-preview" href="https://www.youtube.com/watch?v=ZvkzLoTbLkU" target="_blank">
-            <div class="podcast-preview-thumbnail">
+        <a class="resource-card" href="https://www.youtube.com/watch?v=ZvkzLoTbLkU" target="_blank">
+            <div class="resource-card-thumbnail">
                 <img src="https://img.youtube.com/vi/ZvkzLoTbLkU/hqdefault.jpg" alt="Preview thumbnail for Ross Yeager: Passive Income, Business Mentorships, and Investing Remotely">
             </div>
             <p><strong>Ross Yeager: Passive Income, Business Mentorships, and Investing Remotely Podcast #131</strong> - An insightful discussion on passive income and remote investing.</p>
         </a>
-        <a class="podcast-preview" href="https://www.biggercashflow.com/bigger-cash-flow-podcast/bcfshow082" target="_blank">
-            <div class="podcast-preview-thumbnail">
+        <a class="resource-card" href="https://www.biggercashflow.com/bigger-cash-flow-podcast/bcfshow082" target="_blank">
+            <div class="resource-card-thumbnail">
                 <img src="https://images.squarespace-cdn.com/content/v1/5b5cd4565cfd79a520e9ac51/1609288177726-HFZUA76HQ0U5ELD18QBI/insta.png" alt="Preview thumbnail for Ross Yeager: Bigger Cash Flow Podcast">
             </div>
             <p><strong>Bigger Cash Flow Podcast 082: Remote Investing and Engineering Cash Flow w/ Ross Yeager</strong> - Discussing real estate investing with Bigger Cash Flow</p>
@@ -509,8 +222,9 @@
 
     <footer>
         <p>
-            <a href="https://github.com/droneshire" target="_blank">GitHub</a> • 
-            <a href="https://www.linkedin.com/in/rossyeager/" target="_blank">LinkedIn</a> • 
+            <a href="links.html">Links & Resources</a> •
+            <a href="https://github.com/droneshire" target="_blank">GitHub</a> •
+            <a href="https://www.linkedin.com/in/rossyeager/" target="_blank">LinkedIn</a> •
             <a href="mailto:ryeager12@gmail.com">Email</a>
         </p>
     </footer>
