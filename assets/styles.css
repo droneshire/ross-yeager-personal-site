@@ -122,6 +122,14 @@ h2 {
     box-shadow: 0 4px 14px rgba(0,0,0,0.5);
 }
 
+.project img.project-thumb {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+}
+
 .project h3 {
     font-size: 1.4em;
     margin-bottom: 8px;
